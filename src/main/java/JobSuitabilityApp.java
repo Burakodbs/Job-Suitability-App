@@ -17,15 +17,15 @@ public class JobSuitabilityApp {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(3, 5, 3, 5);
 
-        String[] jobs = {"UPR B 1 ROTA DAGITMA","UB MIX 1 ROTA ","UPR B 2 ROTA DAGITMA","UB MIX 2 ROTA ","SB ROTA DAGITMA",
-                "UPR B DAISHA TRANSFER LH","FR SM DIRECT DELIVERY ROTA","LOCAL EXC TW 2","UB III ZONE 1 PARCA DIZME",
-                "RONOJI SET TRANSFER RH","RONOJI SET TRANSFER LH","LOCAL EXC TW 1","LOKAL FL 1","LOKAL FL 2","LOKAL FL 3",
-                "PLASTIK DOCK VE KONTEYNER OPR","TTTI DOCK OPR","KOWAKE PLASTIK PALET BESLEME","EXC PALET DAGITIM-1",
-                "EXC PALET DAGITIM-2","KUTU PARÇA DAGITIM & CKD","KOWAKE EXC. PALET DAGITIM","STRLS TEMZ VE YUK OPR","SB ROTA YUKLEME",
-                "UPR/B 1 ve UPR/B 2. ROTA YUKLEME","P-LANE DAGITIM ve EXPORT PAKETLEME","ARAC BOSALTMA VE YUKLEME OPERASYONU",
-                "LOCAL FORKLIFT 1","LOCAL FORKLIFT 2","PRES FORKLIFT 1","PRES FORKLIFT 2","LH-290-560 SMALL LOT ROTA",
-                "RH-290-560 SMALL LOT ROTA","EXC DOLU PALET DAGITIM TW 1 ","EXC DOLU PALET DAGITIM TW 2","EXC DOLU PALET DAGITIM TW 3",
-                "EXC DOLU PALET DAGITIM TW 4","EXC BOS PALET TOPLAMA","PW ROTA & EXC. BOS PALET TOPLAMA","LOCAL SET DOLLY TW"
+        String[] jobs = {"UPR B 1 ROTA DAGITMA", "UB MIX 1 ROTA ", "UPR B 2 ROTA DAGITMA", "UB MIX 2 ROTA ", "SB ROTA DAGITMA",
+                "UPR B DAISHA TRANSFER LH", "FR SM DIRECT DELIVERY ROTA", "LOCAL EXC TW 2", "UB III ZONE 1 PARCA DIZME",
+                "RONOJI SET TRANSFER RH", "RONOJI SET TRANSFER LH", "LOCAL EXC TW 1", "LOKAL FL 1", "LOKAL FL 2", "LOKAL FL 3",
+                "PLASTIK DOCK VE KONTEYNER OPR", "TTTI DOCK OPR", "KOWAKE PLASTIK PALET BESLEME", "EXC PALET DAGITIM-1",
+                "EXC PALET DAGITIM-2", "KUTU PARÇA DAGITIM & CKD", "KOWAKE EXC. PALET DAGITIM", "STRLS TEMZ VE YUK OPR", "SB ROTA YUKLEME",
+                "UPR/B 1 ve UPR/B 2. ROTA YUKLEME", "P-LANE DAGITIM ve EXPORT PAKETLEME", "ARAC BOSALTMA VE YUKLEME OPERASYONU",
+                "LOCAL FORKLIFT 1", "LOCAL FORKLIFT 2", "PRES FORKLIFT 1", "PRES FORKLIFT 2", "LH-290-560 SMALL LOT ROTA",
+                "RH-290-560 SMALL LOT ROTA", "EXC DOLU PALET DAGITIM TW 1 ", "EXC DOLU PALET DAGITIM TW 2", "EXC DOLU PALET DAGITIM TW 3",
+                "EXC DOLU PALET DAGITIM TW 4", "EXC BOS PALET TOPLAMA", "PW ROTA & EXC. BOS PALET TOPLAMA", "LOCAL SET DOLLY TW"
         };
         JComboBox<String> jobComboBox = new JComboBox<>(jobs);
         jobComboBox.setPreferredSize(new Dimension(300, 30));
@@ -53,7 +53,7 @@ public class JobSuitabilityApp {
 
         int[][] groups = {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11, 12}, {13, 14}, {15, 16, 17, 18, 19, 20}};
         Color[] colors = {new Color(255, 230, 230), new Color(230, 255, 230), new Color(230, 230, 255), new Color(255, 255, 230), new Color(230, 255, 255)};
-        String[] categories={"BOYUN","OMUZ","BİLEK","BEL/BOYUN/OMUZ/BİLEK","BEL","DİZ"};
+        String[] categories = {"BOYUN", "OMUZ", "BİLEK", "BEL/BOYUN/OMUZ/BİLEK", "BEL", "DİZ"};
         for (int i = 0; i < groups.length; i++) {
             JPanel groupPanel = new JPanel();
             groupPanel.setLayout(new GridBagLayout());
@@ -114,203 +114,203 @@ public class JobSuitabilityApp {
             String result = "";
             switch (selectedJob) {
                 case "UPR B 1 ROTA DAGITMA":
-                    result = (totalScore <= 4) ? "\"UPR B 1 ROTA DAGITMA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UPR B 1 ROTA DAGITMA\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"UPR B 1 ROTA DAGITMA\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"UPR B 1 ROTA DAGITMA\" işi için Orta Riskli" :
                                     "\"UPR B 1 ROTA DAGITMA\" işi için Yüksek Riskli";
                     break;
                 case "UB MIX 1 ROTA":
-                    result = (totalScore <= 4) ? "\"UB MIX 1 ROTA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UB MIX 1 ROTA\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"UB MIX 1 ROTA\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"UB MIX 1 ROTA\" işi için Orta Riskli" :
                                     "\"UB MIX 1 ROTA\" işi için Yüksek Riskli";
                     break;
                 case "UPR B 2 ROTA DAGITMA":
                     result = (totalScore <= 4) ? "\"UPR B 2 ROTA DAGITMA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UPR B 2 ROTA DAGITMA\" işi için Orta Riskli" :
+                            (totalScore < 9) ? "\"UPR B 2 ROTA DAGITMA\" işi için Orta Riskli" :
                                     "\"UPR B 2 ROTA DAGITMA\" işi için Yüksek Riskli";
                     break;
                 case "UB MIX 2 ROTA":
-                    result = (totalScore <= 4) ? "\"UB MIX 2 ROTA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UB MIX 2 ROTA\" işi için Orta Riskli" :
+                    result = (totalScore <= 7) ? "\"UB MIX 2 ROTA\" işi için Düşük Riskli" :
+                            (totalScore < 13) ? "\"UB MIX 2 ROTA\" işi için Orta Riskli" :
                                     "\"UB MIX 2 ROTA\" işi için Yüksek Riskli";
                     break;
                 case "SB ROTA DAGITMA":
-                    result = (totalScore <= 4) ? "\"SB ROTA DAGITMA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"SB ROTA DAGITMA\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"SB ROTA DAGITMA\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"SB ROTA DAGITMA\" işi için Orta Riskli" :
                                     "\"SB ROTA DAGITMA\" işi için Yüksek Riskli";
                     break;
                 case "UPR B DAISHA TRANSFER LH":
-                    result = (totalScore <= 4) ? "\"UPR B DAISHA TRANSFER LH\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UPR B DAISHA TRANSFER LH\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"UPR B DAISHA TRANSFER LH\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"UPR B DAISHA TRANSFER LH\" işi için Orta Riskli" :
                                     "\"UPR B DAISHA TRANSFER LH\" işi için Yüksek Riskli";
                     break;
                 case "FR SM DIRECT DELIVERY ROTA":
-                    result = (totalScore <= 4) ? "\"FR SM DIRECT DELIVERY ROTA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"FR SM DIRECT DELIVERY ROTA\" işi için Orta Riskli" :
+                    result = (totalScore <= 7) ? "\"FR SM DIRECT DELIVERY ROTA\" işi için Düşük Riskli" :
+                            (totalScore < 13) ? "\"FR SM DIRECT DELIVERY ROTA\" işi için Orta Riskli" :
                                     "\"FR SM DIRECT DELIVERY ROTA\" işi için Yüksek Riskli";
                     break;
                 case "LOCAL EXC TW 2":
-                    result = (totalScore <= 4) ? "\"LOCAL EXC TW 2\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOCAL EXC TW 2\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"LOCAL EXC TW 2\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"LOCAL EXC TW 2\" işi için Orta Riskli" :
                                     "\"LOCAL EXC TW 2\" işi için Yüksek Riskli";
                     break;
                 case "UB III ZONE 1 PARCA DIZME":
-                    result = (totalScore <= 4) ? "\"UB III ZONE 1 PARCA DIZME\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UB III ZONE 1 PARCA DIZME\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"UB III ZONE 1 PARCA DIZME\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"UB III ZONE 1 PARCA DIZME\" işi için Orta Riskli" :
                                     "\"UB III ZONE 1 PARCA DIZME\" işi için Yüksek Riskli";
                     break;
                 case "RONOJI SET TRANSFER RH":
-                    result = (totalScore <= 4) ? "\"RONOJI SET TRANSFER RH\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"RONOJI SET TRANSFER RH\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"RONOJI SET TRANSFER RH\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"RONOJI SET TRANSFER RH\" işi için Orta Riskli" :
                                     "\"RONOJI SET TRANSFER RH\" işi için Yüksek Riskli";
                     break;
                 case "RONOJI SET TRANSFER LH":
-                    result = (totalScore <= 4) ? "\"RONOJI SET TRANSFER LH\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"RONOJI SET TRANSFER LH\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"RONOJI SET TRANSFER LH\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"RONOJI SET TRANSFER LH\" işi için Orta Riskli" :
                                     "\"RONOJI SET TRANSFER LH\" işi için Yüksek Riskli";
                     break;
                 case "LOCAL EXC TW 1":
-                    result = (totalScore <= 4) ? "\"LOCAL EXC TW 1\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOCAL EXC TW 1\" işi için Orta Riskli" :
+                    result = (totalScore <= 3) ? "\"LOCAL EXC TW 1\" işi için Düşük Riskli" :
+                            (totalScore < 9) ? "\"LOCAL EXC TW 1\" işi için Orta Riskli" :
                                     "\"LOCAL EXC TW 1\" işi için Yüksek Riskli";
                     break;
                 case "LOKAL FL 1":
-                    result = (totalScore <= 4) ? "\"LOKAL FL 1\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOKAL FL 1\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"LOKAL FL 1\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"LOKAL FL 1\" işi için Orta Riskli" :
                                     "\"LOKAL FL 1\" işi için Yüksek Riskli";
                     break;
                 case "LOKAL FL 2":
-                    result = (totalScore <= 4) ? "\"LOKAL FL 2\" işi için Düşük Riskli" :
+                    result = (totalScore <= 2) ? "\"LOKAL FL 2\" işi için Düşük Riskli" :
                             (totalScore < 8) ? "\"LOKAL FL 2\" işi için Orta Riskli" :
                                     "\"LOKAL FL 2\" işi için Yüksek Riskli";
                     break;
                 case "LOKAL FL 3":
                     result = (totalScore <= 4) ? "\"LOKAL FL 3\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOKAL FL 3\" işi için Orta Riskli" :
+                            (totalScore < 10) ? "\"LOKAL FL 3\" işi için Orta Riskli" :
                                     "\"LOKAL FL 3\" işi için Yüksek Riskli";
                     break;
                 case "PLASTIK DOCK VE KONTEYNER OPR":
-                    result = (totalScore <= 4) ? "\"PLASTIK DOCK VE KONTEYNER OPR\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"PLASTIK DOCK VE KONTEYNER OPR\" işi için Orta Riskli" :
+                    result = (totalScore <= 3) ? "\"PLASTIK DOCK VE KONTEYNER OPR\" işi için Düşük Riskli" :
+                            (totalScore < 9) ? "\"PLASTIK DOCK VE KONTEYNER OPR\" işi için Orta Riskli" :
                                     "\"PLASTIK DOCK VE KONTEYNER OPR\" işi için Yüksek Riskli";
                     break;
                 case "TTTI DOCK OPR":
-                    result = (totalScore <= 4) ? "\"TTTI DOCK OPR\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"TTTI DOCK OPR\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"TTTI DOCK OPR\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"TTTI DOCK OPR\" işi için Orta Riskli" :
                                     "\"TTTI DOCK OPR\" işi için Yüksek Riskli";
                     break;
                 case "KOWAKE PLASTIK PALET BESLEME":
-                    result = (totalScore <= 4) ? "\"KOWAKE PLASTIK PALET BESLEME\" işi için Düşük Riskli" :
+                    result = (totalScore <= 2) ? "\"KOWAKE PLASTIK PALET BESLEME\" işi için Düşük Riskli" :
                             (totalScore < 8) ? "\"KOWAKE PLASTIK PALET BESLEME\" işi için Orta Riskli" :
                                     "\"KOWAKE PLASTIK PALET BESLEME\" işi için Yüksek Riskli";
                     break;
                 case "EXC PALET DAGITIM-1":
                     result = (totalScore <= 4) ? "\"EXC PALET DAGITIM-1\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC PALET DAGITIM-1\" işi için Orta Riskli" :
+                            (totalScore < 10) ? "\"EXC PALET DAGITIM-1\" işi için Orta Riskli" :
                                     "\"EXC PALET DAGITIM-1\" işi için Yüksek Riskli";
                     break;
                 case "EXC PALET DAGITIM-2":
-                    result = (totalScore <= 4) ? "\"EXC PALET DAGITIM-2\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC PALET DAGITIM-2\" işi için Orta Riskli" :
+                    result = (totalScore <= 3) ? "\"EXC PALET DAGITIM-2\" işi için Düşük Riskli" :
+                            (totalScore < 9) ? "\"EXC PALET DAGITIM-2\" işi için Orta Riskli" :
                                     "\"EXC PALET DAGITIM-2\" işi için Yüksek Riskli";
                     break;
                 case "KUTU PARÇA DAGITIM & CKD":
                     result = (totalScore <= 4) ? "\"KUTU PARÇA DAGITIM & CKD\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"KUTU PARÇA DAGITIM & CKD\" işi için Orta Riskli" :
+                            (totalScore < 11) ? "\"KUTU PARÇA DAGITIM & CKD\" işi için Orta Riskli" :
                                     "\"KUTU PARÇA DAGITIM & CKD\" işi için Yüksek Riskli";
                     break;
                 case "KOWAKE EXC. PALET DAGITIM":
-                    result = (totalScore <= 4) ? "\"KOWAKE EXC. PALET DAGITIM\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"KOWAKE EXC. PALET DAGITIM\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"KOWAKE EXC. PALET DAGITIM\" işi için Düşük Riskli" :
+                            (totalScore < 9) ? "\"KOWAKE EXC. PALET DAGITIM\" işi için Orta Riskli" :
                                     "\"KOWAKE EXC. PALET DAGITIM\" işi için Yüksek Riskli";
                     break;
                 case "STRLS TEMZ VE YUK OPR":
-                    result = (totalScore <= 4) ? "\"STRLS TEMZ VE YUK OPR\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"STRLS TEMZ VE YUK OPR\" işi için Orta Riskli" :
+                    result = (totalScore <= 7) ? "\"STRLS TEMZ VE YUK OPR\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"STRLS TEMZ VE YUK OPR\" işi için Orta Riskli" :
                                     "\"STRLS TEMZ VE YUK OPR\" işi için Yüksek Riskli";
                     break;
                 case "SB ROTA YUKLEME":
-                    result = (totalScore <= 4) ? "\"SB ROTA YUKLEME\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"SB ROTA YUKLEME\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"SB ROTA YUKLEME\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"SB ROTA YUKLEME\" işi için Orta Riskli" :
                                     "\"SB ROTA YUKLEME\" işi için Yüksek Riskli";
                     break;
                 case "UPR/B 1 ve UPR/B 2. ROTA YUKLEME":
                     result = (totalScore <= 4) ? "\"UPR/B 1 ve UPR/B 2. ROTA YUKLEME\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"UPR/B 1 ve UPR/B 2. ROTA YUKLEME\" işi için Orta Riskli" :
+                            (totalScore < 9) ? "\"UPR/B 1 ve UPR/B 2. ROTA YUKLEME\" işi için Orta Riskli" :
                                     "\"UPR/B 1 ve UPR/B 2. ROTA YUKLEME\" işi için Yüksek Riskli";
                     break;
                 case "P-LANE DAGITIM ve EXPORT PAKETLEME":
-                    result = (totalScore <= 4) ? "\"P-LANE DAGITIM ve EXPORT PAKETLEME\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"P-LANE DAGITIM ve EXPORT PAKETLEME\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"P-LANE DAGITIM ve EXPORT PAKETLEME\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"P-LANE DAGITIM ve EXPORT PAKETLEME\" işi için Orta Riskli" :
                                     "\"P-LANE DAGITIM ve EXPORT PAKETLEME\" işi için Yüksek Riskli";
                     break;
                 case "ARAC BOSALTMA VE YUKLEME OPERASYONU":
-                    result = (totalScore <= 4) ? "\"ARAC BOSALTMA VE YUKLEME OPERASYONU\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"ARAC BOSALTMA VE YUKLEME OPERASYONU\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"ARAC BOSALTMA VE YUKLEME OPERASYONU\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"ARAC BOSALTMA VE YUKLEME OPERASYONU\" işi için Orta Riskli" :
                                     "\"ARAC BOSALTMA VE YUKLEME OPERASYONU\" işi için Yüksek Riskli";
                     break;
                 case "LOCAL FORKLIFT 1":
                     result = (totalScore <= 4) ? "\"LOCAL FORKLIFT 1\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOCAL FORKLIFT 1\" işi için Orta Riskli" :
+                            (totalScore < 9) ? "\"LOCAL FORKLIFT 1\" işi için Orta Riskli" :
                                     "\"LOCAL FORKLIFT 1\" işi için Yüksek Riskli";
                     break;
                 case "LOCAL FORKLIFT 2":
-                    result = (totalScore <= 4) ? "\"LOCAL FORKLIFT 2\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOCAL FORKLIFT 2\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"LOCAL FORKLIFT 2\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"LOCAL FORKLIFT 2\" işi için Orta Riskli" :
                                     "\"LOCAL FORKLIFT 2\" işi için Yüksek Riskli";
                     break;
                 case "PRES FORKLIFT 1":
-                    result = (totalScore <= 4) ? "\"PRES FORKLIFT 1\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"PRES FORKLIFT 1\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"PRES FORKLIFT 1\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"PRES FORKLIFT 1\" işi için Orta Riskli" :
                                     "\"PRES FORKLIFT 1\" işi için Yüksek Riskli";
                     break;
                 case "PRES FORKLIFT 2":
-                    result = (totalScore <= 4) ? "\"PRES FORKLIFT 2\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"PRES FORKLIFT 2\" işi için Orta Riskli" :
+                    result = (totalScore <= 7) ? "\"PRES FORKLIFT 2\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"PRES FORKLIFT 2\" işi için Orta Riskli" :
                                     "\"PRES FORKLIFT 2\" işi için Yüksek Riskli";
                     break;
                 case "LH-290-560 SMALL LOT ROTA":
-                    result = (totalScore <= 4) ? "\"LH-290-560 SMALL LOT ROTA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LH-290-560 SMALL LOT ROTA\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"LH-290-560 SMALL LOT ROTA\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"LH-290-560 SMALL LOT ROTA\" işi için Orta Riskli" :
                                     "\"LH-290-560 SMALL LOT ROTA\" işi için Yüksek Riskli";
                     break;
                 case "RH-290-560 SMALL LOT ROTA":
-                    result = (totalScore <= 4) ? "\"RH-290-560 SMALL LOT ROTA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"RH-290-560 SMALL LOT ROTA\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"RH-290-560 SMALL LOT ROTA\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"RH-290-560 SMALL LOT ROTA\" işi için Orta Riskli" :
                                     "\"RH-290-560 SMALL LOT ROTA\" işi için Yüksek Riskli";
                     break;
                 case "EXC DOLU PALET DAGITIM TW 1":
-                    result = (totalScore <= 4) ? "\"EXC DOLU PALET DAGITIM TW 1\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC DOLU PALET DAGITIM TW 1\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"EXC DOLU PALET DAGITIM TW 1\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"EXC DOLU PALET DAGITIM TW 1\" işi için Orta Riskli" :
                                     "\"EXC DOLU PALET DAGITIM TW 1\" işi için Yüksek Riskli";
                     break;
                 case "EXC DOLU PALET DAGITIM TW 2":
-                    result = (totalScore <= 4) ? "\"EXC DOLU PALET DAGITIM TW 2\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC DOLU PALET DAGITIM TW 2\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"EXC DOLU PALET DAGITIM TW 2\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"EXC DOLU PALET DAGITIM TW 2\" işi için Orta Riskli" :
                                     "\"EXC DOLU PALET DAGITIM TW 2\" işi için Yüksek Riskli";
                     break;
                 case "EXC DOLU PALET DAGITIM TW 3":
-                    result = (totalScore <= 4) ? "\"EXC DOLU PALET DAGITIM TW 3\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC DOLU PALET DAGITIM TW 3\" işi için Orta Riskli" :
+                    result = (totalScore <= 7) ? "\"EXC DOLU PALET DAGITIM TW 3\" işi için Düşük Riskli" :
+                            (totalScore < 12) ? "\"EXC DOLU PALET DAGITIM TW 3\" işi için Orta Riskli" :
                                     "\"EXC DOLU PALET DAGITIM TW 3\" işi için Yüksek Riskli";
                     break;
                 case "EXC DOLU PALET DAGITIM TW 4":
-                    result = (totalScore <= 4) ? "\"EXC DOLU PALET DAGITIM TW 4\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC DOLU PALET DAGITIM TW 4\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"EXC DOLU PALET DAGITIM TW 4\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"EXC DOLU PALET DAGITIM TW 4\" işi için Orta Riskli" :
                                     "\"EXC DOLU PALET DAGITIM TW 4\" işi için Yüksek Riskli";
                     break;
                 case "EXC BOS PALET TOPLAMA":
-                    result = (totalScore <= 4) ? "\"EXC BOS PALET TOPLAMA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"EXC BOS PALET TOPLAMA\" işi için Orta Riskli" :
+                    result = (totalScore <= 5) ? "\"EXC BOS PALET TOPLAMA\" işi için Düşük Riskli" :
+                            (totalScore < 10) ? "\"EXC BOS PALET TOPLAMA\" işi için Orta Riskli" :
                                     "\"EXC BOS PALET TOPLAMA\" işi için Yüksek Riskli";
                     break;
                 case "PW ROTA & EXC. BOS PALET TOPLAMA":
                     result = (totalScore <= 4) ? "\"PW ROTA & EXC. BOS PALET TOPLAMA\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"PW ROTA & EXC. BOS PALET TOPLAMA\" işi için Orta Riskli" :
+                            (totalScore < 9) ? "\"PW ROTA & EXC. BOS PALET TOPLAMA\" işi için Orta Riskli" :
                                     "\"PW ROTA & EXC. BOS PALET TOPLAMA\" işi için Yüksek Riskli";
                     break;
                 case "LOCAL SET DOLLY TW":
-                    result = (totalScore <= 4) ? "\"LOCAL SET DOLLY TW\" işi için Düşük Riskli" :
-                            (totalScore < 8) ? "\"LOCAL SET DOLLY TW\" işi için Orta Riskli" :
+                    result = (totalScore <= 6) ? "\"LOCAL SET DOLLY TW\" işi için Düşük Riskli" :
+                            (totalScore < 11) ? "\"LOCAL SET DOLLY TW\" işi için Orta Riskli" :
                                     "\"LOCAL SET DOLLY TW\" işi için Yüksek Riskli";
                     break;
                 case null:
